@@ -14,25 +14,11 @@ int main() {
 	getline(cin, pattern);
 
 	int answer = 0;
-	int cnt = 0;
 
-	// i: start point
-	for (int i = 0; i <= pattern.length(); i++) {
-		int res = 0;
-		cnt = 0;
-		// idx: start point부터 탐색 직접적으로 담당
-		for (int idx = i; idx < str.length(); idx++) {
-			if (str[idx] == pattern[cnt++]) {
-
-				if (cnt == pattern.length()) {
-					res++;
-					cnt = 0;
-				}
-			}
-			else
-				cnt = 0;
-		}
-		answer = max(answer, res);
+	int f = str.find(pattern);
+	while (f != string::npos) {
+		answer++;
+		f = str.find(pattern, f + pattern.size());
 	}
 
 	cout << answer;
