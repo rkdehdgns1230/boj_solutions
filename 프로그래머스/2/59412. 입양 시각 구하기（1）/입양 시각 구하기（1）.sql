@@ -1,5 +1,4 @@
 SELECT EXTRACT(HOUR from DATETIME) as HOUR, COUNT(ANIMAL_ID) as COUNT
 FROM ANIMAL_OUTS
-where EXTRACT(HOUR from DATETIME) >= 9 and EXTRACT(HOUR from DATETIME) < 20
-group by EXTRACT(HOUR from DATETIME)
+group by EXTRACT(HOUR from DATETIME) having hour >= 9 and hour < 20
 order by hour;
