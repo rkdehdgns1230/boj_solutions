@@ -13,7 +13,7 @@ bool binarySearch(int x) {
 
 	int mid;
 
-	while (start < end) {
+	while (start <= end) {
 		mid = (start + end) / 2;
 
 		if (B[mid] < x) {
@@ -55,7 +55,7 @@ int main() {
 	for (int i = 0; i < a; i++) {
 		int tmp = A[i];
 
-		if (!binary_search(B.begin(), B.end(), tmp)) {
+		if (!binarySearch(tmp)) {
 			answer.push_back(tmp);
 		}
 	}
